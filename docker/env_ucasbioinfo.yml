@@ -1,0 +1,66 @@
+# env_ucasbioinfo.yml
+# 专注于提供一个统一的、基于命令行的 Linux 生信分析环境。
+
+name: ucasbioinfo
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  # 核心语言与交互环境
+  - python=3.11     # Python 解释器，用于脚本编写和运行工具
+  - jupyterlab      # 基于 Web 的交互式开发环境，可运行代码、终端等
+  - notebook        # 经典版 Jupyter Notebook 界面
+  - ipykernel       # Jupyter 连接到 Python 内核的核心
+
+  # 基础数据处理库
+  - pip             # Python 包安装器，用于安装不在 Conda channel 中的包
+  - cython          # C 语言扩展编译器，用于加速某些 Python 模块
+  - pandas          # 用于处理表格数据（如基因表达矩阵）的库
+  - numpy           # Python 科学计算的基础库，处理多维数组
+  - scipy           # 科学计算和技术计算的核心库
+  - matplotlib      # 基础的 Python 绘图库，用于生成静态图表
+  - seaborn         # 基于 matplotlib 的高级统计数据可视化库
+  - biopython       # 用于处理生物学序列数据（如 FASTA/Q）的库
+
+  # 底层依赖库 (某些软件可能需要)
+  - hdf5            # 用于存储和组织大量科学数据的文件格式和库
+  - h5py            # 用于读写 HDF5 文件格式的 Python 接口
+  - lzo             # 一种快速的数据压缩库
+  - blosc           # 一种为速度优化的高性能压缩库
+
+  # 测序数据预处理与质量控制 (QC)
+  - fastqc          # 对原始测序数据 (FASTQ) 进行质量评估
+  - multiqc         # 聚合多个分析工具（如 FastQC）的报告，生成汇总报告
+  - trim-galore     # 自动化裁剪 FASTQ 文件中的接头序列和低质量碱基
+  - fastp           # 一个超快速的工具，集质量控制、过滤、裁剪于一体
+
+  # 序列比对 (Alignment)
+  - bwa             # 经典的基因组比对工具，常用于 DNA-Seq 和变异检测
+  - bowtie2         # 快速、内存高效的基因组比对工具，适用于 DNA-Seq
+  - hisat2          # 支持剪接位点感知的比对工具，专为 RNA-Seq 设计
+  - star            # 高性能的 RNA-Seq 比对工具，准确度高
+
+  # 比对后处理与分析
+  - samtools        # 处理 SAM/BAM 比对文件的核心工具集
+  - bedtools        # 处理基因组区间文件 (BED/GFF/VCF) 的瑞士军刀
+  - subread         # 包含 featureCounts，用于根据基因注释统计比对上的 reads 数
+  - pybigwig        # 用于高效访问 bigWig 基因组数据文件的库
+  - macs2           # TODO：需要替换成pip版本
+
+  # 转录本定量
+  - salmon          # 基于 k-mer 的快速转录本丰度定量工具
+
+  # 数据下载与流程管理
+  - sra-tools       # 从 NCBI SRA 数据库下载高通量测序数据的工具集
+  - snakemake       # 一个用于创建可重复、可扩展的生物信息学分析流程的工具
+  
+  # 单细胞分析工具 (Python-based)
+  - scanpy          # Python 单细胞分析核心库
+  - anndata         # Scanpy 使用的核心数据结构，用于存储带注释的数据矩阵
+  - python-igraph   # Scanpy 依赖，用于图分析
+  - leidenalg       # Scanpy 依赖，用于社区发现/聚类
+  - kallisto        # 用于快速生成单细胞计数矩阵的工具 (上游)
+  - bustools        # 配合 kallisto 使用的工具 (上游)
+  - loompy          # 用于处理 .loom 格式单细胞数据文件的库
+

@@ -1,0 +1,39 @@
+# env_scenicplus.yml
+# 一个为运行 SCENIC+ 工具链而配置的独立 Conda 环境。
+
+name: scenicplus
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  # 核心语言与交互环境
+  - python=3.11.8   # SCENIC+ 运行所需的特定 Python 版本
+  - jupyterlab      # 基于 Web 的交互式开发环境，用于运行分析流程
+  - ipykernel       # Jupyter 连接到此 Python 环境的核心
+  - ipywidgets      # 在 Jupyter 中提供交互式 HTML 部件（如进度条）
+
+  # 基础包
+  - pip             # Python 包安装器，用于安装不在 Conda channel 中的包
+  - cython          # C 语言扩展编译器，用于加速某些 Python 模块
+  - numpy           # 科学计算的基础库，处理多维数组
+  - pandas          # 用于处理和操作表格数据
+  - scipy           # 科学计算和技术计算的核心库
+  - matplotlib      # 基础的 Python 绘图库
+  - seaborn         # 基于 matplotlib 的高级统计数据可视化库
+  - h5py            # 用于读写 HDF5 文件格式的 Python 接口
+  - hdf5            # HDF5 文件格式的核心库
+  - pyarrow         # 读写 arrow/feather 文件
+  - lzo             # 一种快速的数据压缩库
+  - blosc           # 一种为速度优化的高性能压缩库
+
+  # 单细胞数据
+  - scanpy          # 单细胞 RNA-seq 数据分析的核心工具包
+  - anndata         # Scanpy 使用的核心数据结构，用于存储带注释的数据矩阵
+  - loompy          # 用于处理 .loom 格式单细胞数据文件的库
+
+  # 通过 Pip 安装
+  - pip:
+    - macs2         # bioconda 中的macs2有问题
+    - scikit-misc
+    - git+https://github.com/aertslab/scenicplus.git
