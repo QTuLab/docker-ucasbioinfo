@@ -5,7 +5,27 @@
 [![GitHub license](https://img.shields.io/github/license/QTuLab/docker-ucasbioinfo)](https://github.com/QTuLab/docker-ucasbioinfo/blob/main/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qtulab/ucasbioinfo)](https://hub.docker.com/r/qtulab/ucasbioinfo)
 
-[TOC]
+##
+- [✨ Main Features](#-main-features)
+- [🚀 Quick Start](#-quick-start)
+  - [Step 1: Install a Container Engine](#step-1-install-a-container-engine)
+  - [Step 2: Pull the Docker Image](#step-2-pull-the-docker-image)
+  - [Step 3: Start and Enter the Container](#step-3-start-and-enter-the-container)
+- [🔬 Container Usage Guide](#-container-usage-guide)
+  - [File System](#file-system)
+  - [Conda Environment Management](#conda-environment-management)
+  - [Using Jupyter Lab](#using-jupyter-lab)
+  - [Command-Line Tools](#command-line-tools)
+- [📖 Notebook Usage Guide](#-notebook-usage-guide)
+  - [SCENIC+ Tutorial: From Multi-omics Data to Enhancer-driven Regulatory Networks](#scenic-tutorial-from-multi-omics-data-to-enhancer-driven-regulatory-networks)
+- [💡 Advanced Usage and Security Tips](#-advanced-usage-and-security-tips)
+  - [Using Podman on a Server (More Secure)](#using-podman-on-a-server-more-secure)
+  - [Persistent Sessions (Tmux)](#persistent-sessions-tmux)
+- [❓ FAQ](#-faq)
+- [📄 License](#-license)
+- [🤝 Feedback and Contributions](#-feedback-and-contributions)
+
+##
 
 This project is designed for bioinformatics teaching at the University of Chinese Academy of Sciences. It provides a cross-platform Docker image aimed at offering students a unified, stable, and out-of-the-box Linux environment for bioinformatics analysis.
 
@@ -58,13 +78,13 @@ docker run -it --rm -p 8888:8888 -v "${PWD}:/home/ubuntu/project" qtulab/ucasbio
 
 **Parameter Explanation:**
 
-| **Parameter** | **Description** |
-| ---- | ---- |
-| `-it` | Starts an interactive session, allowing you to interact with the container's terminal. |
-| `--rm` | Automatically removes the container when it stops, preventing the accumulation of useless containers. This option is safe as data is saved locally via the `-v` parameter. |
-| `-p 8888:8888` | Maps port 8888 of the container to port 8888 on your local machine, used for accessing Jupyter Lab. |
-| `-v "..."` | **(Important)** Mounts a volume, mapping the current local directory (`$(pwd)` or `${PWD}`) to the `/home/ubuntu/project` directory inside the container. |
-| `--shm-size=16g` | Sets the shared memory size. Some tools require a larger shared memory, so it is recommended to set this as needed. |
+| **Parameter**    | **Description**                                                                                                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-it`            | Starts an interactive session, allowing you to interact with the container's terminal.                                                                                     |
+| `--rm`           | Automatically removes the container when it stops, preventing the accumulation of useless containers. This option is safe as data is saved locally via the `-v` parameter. |
+| `-p 8888:8888`   | Maps port 8888 of the container to port 8888 on your local machine, used for accessing Jupyter Lab.                                                                        |
+| `-v "..."`       | **(Important)** Mounts a volume, mapping the current local directory (`$(pwd)` or `${PWD}`) to the `/home/ubuntu/project` directory inside the container.                  |
+| `--shm-size=16g` | Sets the shared memory size. Some tools require a larger shared memory, so it is recommended to set this as needed.                                                        |
 
 After successful execution, the command prompt will change to `(ucasbioinfo) ubuntu@...:/home/ubuntu/project$`, indicating you have entered the container and the `ucasbioinfo` environment is activated by default.
 
