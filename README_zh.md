@@ -5,7 +5,28 @@
 [![GitHub license](https://img.shields.io/github/license/QTuLab/docker-ucasbioinfo)](https://github.com/QTuLab/docker-ucasbioinfo/blob/main/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qtulab/ucasbioinfo)](https://hub.docker.com/r/qtulab/ucasbioinfo)
 
-[TOC]
+##
+
+- [✨ 主要特性](#-主要特性)
+- [🚀 快速开始](#-快速开始)
+  - [第 1 步: 安装容器引擎](#第-1-步-安装容器引擎)
+  - [第 2 步: 拉取 Docker 镜像](#第-2-步-拉取-docker-镜像)
+  - [第 3 步: 启动并进入容器](#第-3-步-启动并进入容器)
+- [🔬 容器使用指南](#-容器使用指南)
+  - [文件系统](#文件系统)
+  - [Conda 环境管理](#conda-环境管理)
+  - [Jupyter Lab 的使用](#jupyter-lab-的使用)
+  - [命令行工具](#命令行工具)
+- [📖 Notebook 使用指南](#-notebook-使用指南)
+  - [SCENIC+ 教程：从双组学数据到增强子调控网络](#scenic-教程从双组学数据到增强子调控网络)
+- [💡 高级用法与安全提示](#-高级用法与安全提示)
+  - [在服务器上使用 Podman (更安全)](#在服务器上使用-podman-更安全)
+  - [持久化会话 (Tmux)](#持久化会话-tmux)
+- [❓ 常见问题 (FAQ)](#-常见问题-faq)
+- [📄 许可证](#-许可证)
+- [🤝 反馈与贡献](#-反馈与贡献)
+
+##
 
 该项目为中国科学院大学生物信息学教学设计，提供一个跨平台的 Docker 镜像，旨在为学生提供统一、稳定、开箱即用的 Linux 生物信息学分析环境。
 
@@ -179,7 +200,7 @@ A: 克隆本 GitHub 仓库，然后运行 docker build -t my-ucasbioinfo-image .
 
 ## 📄 许可证
 
-本项目采用 [MIT 许可证]((https://github.com/QTuLab/docker-ucasbioinfo/blob/main/LICENSE)。
+本项目采用 [MIT 许可证](https://github.com/QTuLab/docker-ucasbioinfo/blob/main/LICENSE)。
 
 ## 🤝 反馈与贡献
 
